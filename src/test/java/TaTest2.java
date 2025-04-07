@@ -7,7 +7,7 @@ import java.util.*;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
-public class TaTest {
+public class TaTest2 {
 
     private ByteArrayOutputStream outStream;
 
@@ -39,10 +39,10 @@ public class TaTest {
             if (random.nextDouble() < 0.2) {
                 first = random.nextBoolean() ? 0 : 1;
             } else {
-                first = 1 + random.nextInt(1_000_000 - 1);
+                first = 1 + random.nextInt(2_147_483_000 - 1);
             }
 
-            second = 1 + random.nextInt(1_000_000 - 1);
+            second = 1 + random.nextInt(2_147_483_000 - 1);
 
             result.add(first);
             result.add(second);
@@ -93,7 +93,7 @@ public class TaTest {
     }
 
     @Test
-    public void test1() {
+    public void test2() {
         List<Integer> input = generateRandomTestNumbers();
         String correctOutput = ExpectedOutput(input);
         baseTest(input, correctOutput);
